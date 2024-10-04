@@ -1,22 +1,3 @@
-from typing import Union
-
-from fastapi import FastAPI
-
-
-
-app = FastAPI()
-
-
-@app.get("/")
-def read_root():
-    return {"Hello": "World"}
-
-
-@app.get("/items/{item_id}")
-def read_item(item_id: int, q: Union[str, None] = None):
-    return {"item_id": item_id, "q": q}
-    
-
 class BankAccount():
 
     def __init__(self, account_id, account_user):
@@ -34,8 +15,5 @@ class BankAccount():
 
     def set_id(self, new_id):
         self.account_id = new_id
-
-    
-
 
     
